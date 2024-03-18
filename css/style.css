@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+header, footer{
+    height: 60px;
+}
+
+header{
+    background-color: rgb(226, 43, 208);
+}
+
+footer{
+    background-color:rgb(226, 43, 208);
+}
+
+main{
+    height: calc(100-120px);
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+main div{
+    width: 30%;
+    background-color: pink;
+    height: 100%;
+}
+
+/* Para telas de computador (maiores que 1024px) */
+@media screen and (min-width: 1025px) {
+    main div {
+        flex-basis: calc(33.33% - 10px); /* Divide a largura em 3 colunas */
+    }
+}
+
+/* Para tablets (entre 768px e 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    main div {
+        flex-basis: calc(50% - 10px); /* Divide a largura em 2 colunas */
+    }
+}
+
+/* Para celulares (menores que 768px) */
+@media screen and (max-width: 767px) {
+    main div {
+        flex-basis: 100%; /* Apenas 1 coluna */
+    }
+}
